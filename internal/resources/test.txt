@@ -1,0 +1,120 @@
+1|I don't worry about things that have already happened.|1|N1|-14
+21|I fear for the worst.|-1|N1|-14
+37|I am afraid of many things.|-1|N1|-14
+51|I get stressed out easily.|-1|N1|-14
+6|I get angry easily.|-1|N2|-14
+26|I get irritated easily.|-1|N2|-14
+62|I lose my temper.|-1|N2|-14
+75|I rarely get irritated.|1|N2|-14
+9|I often feel sad or depressed.|-1|N3|-20
+29|I dislike myself.|-1|N3|-20
+44|I am often gloomy or unhappy.|-1|N3|-20
+54|I have a low opinion of myself.|-1|N3|-20
+13|I am easily intimidated.|-1|N4|-8
+46|I find it difficult to approach others.|-1|N4|-8
+92|I am not embarrassed easily.|1|N4|-8
+116|I am able to stand up for myself.|1|N4|-8
+15|I rarely overindulge.|1|N5|-8
+16|I often eat too much.|-1|N5|-8
+58|I go on excessive binges like eating or drinking.|-1|N5|-8
+104|I am able to control my cravings.|1|N5|-8
+50|I feel that i'm unable to deal with things.|-1|N6|-2
+86|I remain calm under pressure.|1|N6|-2
+107|I know how to cope.|1|N6|-2
+119|I am calm even in tense situations.|1|N6|-2
+2|I make friends easily.|1|E1|4
+22|I warm up quickly to others.|1|E1|4
+38|I feel comfortable around other people.|1|E1|4
+52|I act comfortably with others.|1|E1|4
+7|I like going to get-togethers.|1|E2|-8
+27|I talk to a lot of different people at parties.|1|E2|-8
+98|I don't like crowded events.|-1|E2|-8
+108|I avoid crowds.|-1|E2|-8
+10|I take charge.|1|E3|-2
+30|I try to lead others.|1|E3|-2
+64|I take control of things.|1|E3|-2
+78|I’d rather others to get the ball rolling.|-1|E3|-2
+14|I am always doing something.|1|E4|4
+32|I am always on the go.|1|E4|4
+47|I do a lot in my spare time.|1|E4|4
+57|I like to do a lot of things at the same time.|1|E4|4
+17|I love excitement.|1|E5|4
+34|I look for adventure.|1|E5|4
+48|I love action.|1|E5|4
+67|I enjoy being reckless.|1|E5|4
+18|I give off joy.|1|E6|4
+35|I have a lot of fun.|1|E6|4
+69|I love life.|1|E6|4
+70|I like to laugh out loud.|1|E6|4
+3|I have little to say.|-1|O1|-2
+23|I like to fantasize about unrealistic things.|1|O1|-2
+39|I love to daydream.|1|O1|-2
+53|I like to get lost in thought.|1|O1|-2
+42|I see the beauty in things that others might not notice.|1|O2|-14
+76|I do not like art.|-1|O2|-14
+88|I do not like poetry.|-1|O2|-14
+99|I do not enjoy going to art museums.|-1|O2|-14
+11|I experience my emotions intensely.|1|O3|-8
+79|I often get emotional when I see people suffer.|1|O3|-8
+90|I am not easily affected by my emotions.|-1|O3|-8
+111|I feel few emotional highs and lows.|-1|O3|-8
+65|I prefer to stick with things that I know.|-1|O4|-20
+80|I dislike life changes.|-1|O4|-20
+93|I don’t like the idea of change.|-1|O4|-20
+117|I am ok with traditional ways.|-1|O4|-20
+83|I am not interested in abstract ideas.|-1|O5|-20
+95|I avoid deep discussions.|-1|O5|-20
+105|I have difficulty understanding abstract ideas.|-1|O5|-20
+113|I am not interested in theoretical discussions.|-1|O5|-20
+19|I tend to vote liberally or progressive.|1|O6|-14
+59|I believe in something higher than myself.|-1|O6|-14
+71|I tend to vote for conservative politicians.|-1|O6|-14
+120|I stand during the national anthem.|-1|O6|-14
+4|I trust others.|1|A1|-2
+24|I believe that others have good intentions.|1|A1|-2
+40|I trust what people say.|1|A1|-2
+87|I distrust people.|-1|A1|-2
+43|I flatter people to get ahead.|-1|A2|-20
+63|I know how to get around the rules.|-1|A2|-20
+77|I cheat to get ahead.|-1|A2|-20
+109|I take advantage of others.|-1|A2|-20
+12|I make people feel welcomed.|1|A3|-2
+45|I love to help others.|1|A3|-2
+55|I am concerned about others.|1|A3|-2
+110|I turn my back on others.|-1|A3|-2
+81|I love a good fight.|-1|A4|-20
+94|I yell at people.|-1|A4|-20
+102|I insult people.|-1|A4|-20
+112|I get back at others.|-1|A4|-20
+68|I believe that I am better than others.|-1|A5|-20
+84|I think highly of myself.|-1|A5|-20
+96|I have a high opinion of myself.|-1|A5|-20
+118|I make myself the center of attention.|-1|A5|-20
+20|I sympathize with the homeless.|1|A6|-2
+36|I feel sympathy for those who are worse off than myself.|1|A6|-2
+60|I feel for other's misery, disappointment, or other misfortunes.|1|A6|-2
+72|I am not interested in other people's problems.|-1|A6|-2
+5|I complete tasks successfully.|1|C1|4
+25|I excel in what I do.|1|C1|4
+41|I handle tasks smoothly.|1|C1|4
+74|I know how to get things done.|1|C1|4
+8|I like order.|1|C2|-8
+28|I like to tidy up.|1|C2|-8
+89|I leave a mess in my room.|-1|C2|-8
+100|I leave my stuff around.|-1|C2|-8
+31|I keep my promises.|1|C3|-2
+56|I tell the truth.|1|C3|-2
+91|I break my promises.|-1|C3|-2
+101|I usually do what I say i’m going to do.|1|C3|-2
+33|I work hard.|1|C4|4
+66|I do more than what's expected of me.|1|C4|4
+82|I set high standards for myself and others.|1|C4|4
+103|I am highly motivated to succeed.|1|C4|4
+49|I start tasks right away.|1|C5|-14
+85|I find it difficult to get down to work.|-1|C5|-14
+106|I need a push to get started.|-1|C5|-14
+114|I have difficulty starting tasks.|-1|C5|-14
+61|I jump into things without thinking.|-1|C6|-20
+73|I make reckless decisions.|-1|C6|-20
+97|I rush into things.|-1|C6|-20
+115|I act without thinking.|-1|C6|-20
