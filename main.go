@@ -37,6 +37,7 @@ func WebhookHandler(w http.ResponseWriter, r *http.Request) {
 	u := &user.User{}
 	u.LoadQuestionsFromFile()
 	u.ProcessSubtraits(data)
+	u.ProcessUserInfo(data)
 	u.NormalizeSubtraits()
 	u.ProcessTraits()
 	u.NormalizeTraits()
