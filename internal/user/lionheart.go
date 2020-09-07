@@ -258,7 +258,7 @@ func (u *User) TextUser(link string) {
 	msgData := url.Values{}
 	msgData.Set("To", u.PersonalInfo.Phone)
 	msgData.Set("From", os.Getenv("PHONE"))
-	msgData.Set("Body", "Hello! Your Lionheart test results can be found at: "+link)
+	msgData.Set("Body", "Hello! Your Lionheart test results can be found at: " + link)
 	msgDataReader := *strings.NewReader(msgData.Encode())
 
 	client := &http.Client{}
