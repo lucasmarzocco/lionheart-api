@@ -22,7 +22,7 @@ var data map[int]Question
 
 func init() {
 	if fb == nil {
-		opt := option.WithCredentialsFile(os.Getenv("ACCOUNT"))
+		opt := option.WithCredentialsJSON([]byte(os.Getenv("ACCOUNT")))
 		config := &firebase.Config{
 			DatabaseURL: os.Getenv("DB_URL"),
 		}
