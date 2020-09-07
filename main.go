@@ -71,7 +71,7 @@ func WebhookHandler(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
-	//u.WriteUserData("https://lionheart-test.herokuapp.com/results/" + u.PersonalInfo.Phone)
+	u.WriteUserData()
 }
 
 func main() {
