@@ -154,6 +154,42 @@ func (u *User) LoadQuestionsFromFile() {
 	}
 }
 
+func (u *User) SetUserData(event Event, id string, num int) {
+
+	answers := event.Form.Answers
+
+	switch id {
+	case "ZFgBt9dOpDQC":
+		u.PersonalInfo.Name = answers[num].Text
+	case "A3Ff5MitcD0B":
+		u.PersonalInfo.Email = answers[num].Email
+	case "pylMBxOaAfNH":
+		u.PersonalInfo.Phone = answers[num].Phone
+	case "ZEkaXVe4eUKF":
+		u.PersonalInfo.MorF = answers[num].Choice.Label
+	case "Pu310lQ30CWV":
+		u.PersonalInfo.Gender = answers[num].Choice.Label
+	case "V2yfuychA7EO":
+		u.PersonalInfo.Ethnicity = answers[num].Choice.Label
+	case "xhPgXgYmwCrJ":
+		u.PersonalInfo.Education = answers[num].Choice.Label
+	case "CxSa4lMYjDMS":
+		u.PersonalInfo.Country = answers[num].Choice.Label
+	case "BdChbnM9dTK8":
+		u.PersonalInfo.USA = answers[num].Boolean
+	case "nJogp4aNvgO6":
+		u.PersonalInfo.State = answers[num].Choice.Label
+	case "waAM8zX0ZhWe":
+		u.PersonalInfo.City = answers[num].Choice.Label
+	case "gVHbVFWz2JwR":
+		u.PersonalInfo.Live = answers[num].Choice.Label
+	case "mleCoWbJK8XN":
+		u.PersonalInfo.Religion = answers[num].Choice.Label
+	case "vWWAeqhELU2Z":
+		u.PersonalInfo.Marital = answers[num].Choice.Label
+	}
+}
+
 func (u *User) ProcessUserInfo(test []byte) {
 	var event Event
 
@@ -162,22 +198,11 @@ func (u *User) ProcessUserInfo(test []byte) {
 		return
 	}
 
-	answers := event.Form.Answers
+	questions := event.Form.Definition.Fields
 
-	u.PersonalInfo.Name = answers[0].Text
-	u.PersonalInfo.Email = answers[1].Email
-	u.PersonalInfo.Phone = answers[2].Phone
-	u.PersonalInfo.MorF = answers[3].Choice.Label
-	u.PersonalInfo.Gender = answers[4].Choice.Label
-	u.PersonalInfo.Ethnicity = answers[5].Choice.Label
-	u.PersonalInfo.Education = answers[6].Choice.Label
-	u.PersonalInfo.Country = answers[7].Choice.Label
-	u.PersonalInfo.USA = answers[8].Boolean
-	u.PersonalInfo.State = answers[9].Choice.Label
-	u.PersonalInfo.City = answers[10].Choice.Label
-	u.PersonalInfo.Live = answers[11].Choice.Label
-	u.PersonalInfo.Religion = answers[12].Choice.Label
-	u.PersonalInfo.Marital = answers[13].Choice.Label
+	for i, answer := range questions[0:13] {
+		u.SetUserData(event, answer.Id, i)
+	}
 }
 
 func (u *User) ProcessSubtraits(test []byte) {
