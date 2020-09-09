@@ -6,6 +6,7 @@
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-radar.min.js"></script>
     <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
     <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="chart.css">
     <style type="text/css">
 
         html,
@@ -22,7 +23,6 @@
 <body>
 
 <div id="container"></div>
-
 
 <script>
 
@@ -70,8 +70,23 @@
 
 </script>
 
-<div style="text-align: center;">
+<b> DEBUG ONLY</b>
+
+    <b>Freedom</b> shows the extent to which you're free of anxiety [E], sadness [E], self-consciousness [E], overwhelm [E], anger [E], and giving in to temptations [E]. If you scored low on freedom you're getting in your own way; you're holding yourself back from the success you desire. Here at Lionheart we're going to help you stop creating obstacles for yourself. <br>
+    <b>Fulfillment</b> displays how friendly [E], cheerful [E], active [E], assertive [E], and excitement-seeking [E] you are. You don't need to be an adrenaline junky to have a good life, but low levels in any of these traits and you're missing out on what life has to offer! <br>
+    <b>Perception</b> highlights your adventurousness &#129526, imagination &#129412, intellectual thinking &#129299, artistic interest &#127912, how much emotion you feel &#128552, and how progressive your political views are &#129506. In order to create great stuff you need to be open to new experiences. <br>
+    <b>Collaboration</b> indicates how altruistic [E], cooperative [E], modest [E], moral [E], sympathetic [E], and trusting [E] you are. It's important to have these traits, but just don't take it too far--You matter too! On the other hand, if you're always bragging, only think about yourself, or eternally dead-set on getting your way, people aren't going to help you out. <br>
+    <b>Hustle</b> is no joke. It's the single biggest indicator of potential success—without it you'll never amount to anything. Do you do what you say you'll do? [E], are you focused?--or easily distracted [E], do you keep organized? [E], do you plan before doing? [E], are you effective? [E], do you even want to work hard and get ahead? [E] – if not, we're here to get you building the life of your dreams. It's not just going to happen. You have to hustle! <br>
+
+&#128188
+&#9888
+&#9888;&#65039
+
+https://emojiguide.org/warning
+
+
     Debugging.... skill breakdowns: <br>
+
 
     {{ range $key, $value := .Subtraits }}
     <li><strong>{{ $key }}</strong>: {{ $value.NormalScore }} {{ $value.RawScore }}</li>
