@@ -54,6 +54,7 @@ type User struct {
 	PersonalInfo Personal
 	Subtraits    map[string]*Trait
 	Traits       map[string]*Trait
+	Verified     bool
 }
 
 type Trait struct {
@@ -188,6 +189,8 @@ func (u *User) SetUserData(event Event, id string, num int) {
 	case "vWWAeqhELU2Z":
 		u.PersonalInfo.Marital = answers[num].Choice.Label
 	}
+
+	u.Verified = false
 }
 
 func (u *User) ProcessUserInfo(test []byte) {
