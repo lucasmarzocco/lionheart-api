@@ -6,6 +6,7 @@
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-radar.min.js"></script>
     <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
     <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <link rel="stylesheet" href="chart.css">
     <style type="text/css">
 
@@ -18,6 +19,8 @@
             padding: 0;
         }
 
+        <div id="chartContainer" style="height: 300px; width: 100%;">
+
     </style>
 </head>
 <body>
@@ -25,7 +28,6 @@
 <div id="container"></div>
 
 <script>
-
     anychart.onDocumentReady(function () {
         // create data set on our data
         var dataSet = anychart.data.set([
@@ -67,8 +69,35 @@
         chart.container('container');
         chart.draw();
     });
-
 </script>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer",
+            {
+                title:{
+                    text: "Olympic Medals of all Times (till 2012 Olympics)"
+                },
+                data: [
+                    {
+                        type: "bar",
+                        dataPoints: [
+                            { y: 198, label: "Italy"},
+                            { y: 201, label: "China"},
+                            { y: 202, label: "France"},
+                            { y: 236, label: "Great Britain"},
+                            { y: 395, label: "Soviet Union"},
+                            { y: 957, label: "USA"}
+                        ]
+                    },
+                ]
+            });
+
+        chart.render();
+    }
+</script>
+
+
 
 <b> DEBUG ONLY</b>
 
