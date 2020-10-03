@@ -68,74 +68,141 @@
     });
 </script>
 
-    <canvas id="myChart" width="400" height="400"></canvas>
-    <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                    label: '# of Votes',
-                    data: [12, 19, 3, 5, 2, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-        });
-    </script>
+Instructions:
+
+1. Read about each skill and its benefits.
+2. Choose two skills to focus on leveling up.
+3. Once ready to commit, Click here.
 
 
+<b>(O+) Perception</b>
+This graph is a measure of your openness to new activities and ideas, which means you are able to see many ways to achieve a goal. Leveling this skill gives you the ability to solve harder problems by working smarter.
 
-<b> DEBUG ONLY</b>
+Benefits:
+Refine your solutions-awareness
+Mature your Intellectual curiosity
+Advance your problem-solving skills
 
-    <b>Freedom</b> shows the extent to which you're free of anxiety [E], sadness [E], self-consciousness [E], overwhelm [E], anger [E], and giving in to temptations [E]. If you scored low on freedom you're getting in your own way; you're holding yourself back from the success you desire. Here at Lionheart we're going to help you stop creating obstacles for yourself. <br>
-    <b>Fulfillment</b> displays how friendly [E], cheerful [E], active [E], assertive [E], and excitement-seeking [E] you are. You don't need to be an adrenaline junky to have a good life, but low levels in any of these traits and you're missing out on what life has to offer! <br>
-    <b>Perception</b> highlights your adventurousness &#129526, imagination &#129412, intellectual thinking &#129299, artistic interest &#127912, how much emotion you feel &#128552, and how progressive your political views are &#129506. In order to create great stuff you need to be open to new experiences. <br>
-    <b>Collaboration</b> indicates how altruistic [E], cooperative [E], modest [E], moral [E], sympathetic [E], and trusting [E] you are. It's important to have these traits, but just don't take it too far--You matter too! On the other hand, if you're always bragging, only think about yourself, or eternally dead-set on getting your way, people aren't going to help you out. <br>
-    <b>Hustle</b> is no joke. It's the single biggest indicator of potential success—without it you'll never amount to anything. Do you do what you say you'll do? [E], are you focused?--or easily distracted [E], do you keep organized? [E], do you plan before doing? [E], are you effective? [E], do you even want to work hard and get ahead? [E] – if not, we're here to get you building the life of your dreams. It's not just going to happen. You have to hustle! <br>
+🧶-adventurousness
+Adventurousness is the range of consistency from sticking to routine, to eagerness to experience new things. Leveling adventurousness increases your awareness of when to try new approaches to when to stick to the playbook.
 
-&#128188
-&#9888
-&#9888;&#65039
+🎨-artistic-interest
+Artistic interest is a measurement of how capable you are to become involved in natural flow states. Leveling artistic interest allows you to appreciate, enjoy and seek out new creative solutions or experiences, and get into ‘flow states’ more easily.
 
-https://emojiguide.org/warning
+😨-emotionality
+Emotionality is the range of emotions you can experience due to your perceptions or lack thereof. Leveling emotionality allows for a greater understanding of different perspectives.
 
+🦄-imagination
+Imagination is your ability to think deeply on your solutions and come to insights. Leveling imagination increases the number of insights you get from thinking deeply.
 
-    Debugging.... skill breakdowns: <br>
+🤓-intellect
+Intellect is a measurement of your range of dealing with facts versus dealing with ideas. Though there is no better or worse score, lower scores means your strength lies in fact-based approaches, but you may have a hard time exploring new ideas, whereas high scores means you are intrigued by new ideas, but also need to learn to rely on proven results . Leveling Intellect helps you better understand when to go with the proven results, versus when to go with unknown but potentially great solutions.
 
+🧢-liberalism
+Liberalism is a measurement of regard to authority. Scoring lower in liberalism means you have a tendency to stick to stability in traditional methods, whereas high liberalism means you are more open to a change in method. Leveling liberalism allows for a greater understanding of hierarchies and when to deviate.
 
-    {{ range $key, $value := .Subtraits }}
-    <li><strong>{{ $key }}</strong>: {{ $value.NormalScore }} {{ $value.RawScore }}</li>
-    {{ end }}
+<b>(C+) Productivity</b>
 
-    {{ range $key, $value := .Traits }}
-        <li><strong>{{ $key }}</strong>: {{ $value.NormalScore }} {{ $value.RawScore }}</li>
-    {{ end }}
-</div>
+This graph is a measure of your organizational skill, perception of responsibility, and strength of willpower to achieve great things. Leveling productivity gives you the ability to be diligent in your work, have more attention to detail, and an overall ability to do your task well and take obligations to others seriously. Levelers should choose to level this if they wish to eliminate their laziness and apathy, or lack of hard-workingness, or if they wish to enjoy higher operating levels and experiences in life in their career or personal lives.
+
+Benefits:
+Reduce laziness and apathy
+Boost your hard-workingness
+Mature in responsibility and influence
+
+💼-achievement-striving
+This graph represents your conviction in carrying out the tasks that lay before you. Leveling achievement striving will improve ambition, patience and perseverance that, when fully habitualized, will allow you to create great work in your career or general endeavors. If you feel you tend to get by with minimal or low effort, then this is the skill for you.
+
+⚠-cautiousness
+Cautiousness measures how much you like to think through all the options of a situation before taking action. Abnormally high scores means one can become paralyzed by analysis and inaction. On the other hand, scoring too low means you tend to be too impulsive and may regret more actions over time. Leveling cautiousness develops the ability to be thoughtful in the way of alternatives, and consider consequences of action or inaction in a timely manner.
+
+👰-dutifulness
+Dutifulness represents the measurement of your sense of obligation and duty or responsibility. Leveling dutifulness develops a greater sense of obligation and understanding of why you do what you do and why it’s important, even before your self-interest. If you have a sense of being perceived as an unreliable person, or that your word is not respected or taken seriously, or tend to be perceived as someone people cannot count on, then this skill is for you.
+
+🧹-orderliness
+This graph is a measurement of your likeness to be organized and structured. Leveling up orderliness improves your ability to plan things effectively, leverage the power of routines and schedules, and get better utility from productivity  systems and methods. If you feel like you have difficulty making plans or get confused or overwhelmed on what your priorities are, then choose this skill.
+
+🎮-self-discipline
+Self Discipline is a measurement of your willpower and self-control, or ability to restrain yourself from the distractions that derail you. Levelers who choose to level self-discipline will develop the ability to follow through the most unpleasant tasks, and stay focused, and avoid distractions that lead you astray and to procrastination.
+
+🕴-self-efficacy
+This graph represents the confidence in your ability to achieve tasks and accomplish them well. Leveling self-efficacy develops a greater sense of self-belief in your capabilities and potential, innate drive and sense of being in control. Levelers should choose this if they feel their life is spiraling out of control.
+
+<b>(E+) Fulfillment</b>
+
+This graph is a measurement of your positive attitude and tendency to be socially or emotionally reserved. Levelers should choose to level this if they struggle with forming deeper connections with friends or colleagues, feel alienated in the workplace or life, and wish to make individuals feel more comfortable, positive and happy. Generally, high fulfillment individuals tend to get promoted into leadership positions and have more opportunities available to them professionally and personally.
+
+Benefits:
+Increase depthness in relationships
+Boost chances at new opportunities
+Radiate an aura of positive ambience
+
+⛹-activity
+Activity measures your tendency to stay busy, move quickly and energetically or prefer life at a slower pace . There is no right or wrong way to be with activity, so leveling activity focuses on showing you methods of organizing your schedule should you be more active, or methods of being effective at a more relaxed pace.
+
+💪-assertiveness
+Assertiveness represents the likelihood you’ll lead action or activities in groups, as well as your comfort levels doing so. It is important to note there is no right or wrong way to be, so leveling assertiveness focuses on the benefits of when to lead action or activities, versus when to stand by.
+
+😁-cheerfulness
+Cheerfulness measures the range of your positive feelings, such as general happiness, enthusiasm, optimism and joy. Low scores do not mean there are negative emotions, simply less instances of happy emotions throughout a time period. Leveling cheerfulness focuses on the self-awareness of your levels and how they affect your interpersonal relationships.
+
+🏄-excitement-seeking
+Excitement seeking shows your predisposition to be stimulated by risk-taking activities.  Leveling excitement seeking gives you the ability to take chances when needed without becoming overwhelmed, or how to relax yourself in situations when needed.
+
+🐒-friendliness
+Friendliness represents your ability to foster close relationships and feel comfortable around other individuals. Friendliness is at the core of relationship-building which is essential to any successful relationship. Levelers should choose to level friendliness if they wish to develop the interpersonal skills needed to be approachable or develop relationships.
+
+🐑-gregariousness
+Gregariousness is the measurement of your sociability and interest in relating to groups of individuals. It is important to note there is no superior way of being in relation to individual friendliness, or group gregariousness, so levelers who choose to level gregariousness will develop the ability to see the benefits of being in groups or become more independent when needed.
+
+<b>(A+) Collaboration</b>
+
+This graph is a measurement of your internal cooperative skill. Having a high level of collaboration means you’ll be less untrusting or skeptical of people and feel more compassion for others’ causes, putting their interest before your own. Improving your collaboration means you’ll be able to produce or create greater work in general, due to the suspension of ego or superiority complexes in the name of doing great things. Levelers should choose to level collaboration if they find themselves arguing too much, being too competitive and have a general misguided cynical or skeptical view on people’s intentions.
+
+Benefits:
+Mend growing cynicism and excessive untrustingness
+Become more compassionate
+Achieve harder goals
+
+👨-altruism
+Altruism measures your general desire to help others, and the attitude toward helping other. Leveling altruism enhances the feeling of helping others as rewarding instead of self-sacrifice or inconvenient. Choose this skill if you feel yourself too egocentric and would like to develop a quality of awareness and sympathy for the suffering of others.
+
+🤝-cooperation
+Cooperation shows yours ability to compromise your needs, versus being unnecessarily competitive. Cooperation focuses on leveling your ability to understand when to compromise, versus when to contradict viewpoints. Though it is healthy and encouraged to be contrarian, choose this skill if you find yourself needlessly unfriendly or competitive to the point of ineffectiveness, or when to contradict a popular view and dissent in order to achieve a greater outcome.
+
+💍-modesty
+Modesty Is a measure of your reluctance or comfort with drawing attention to yourself. Leveling modesty focuses on either building the ability to hold yourself in high regard without developing excessive interest and admiration in yourself, or being comfortable being the center of attention when needed.
+
+👮🏻-morality
+Morality is the measurement of your predisposition to be manipulative or deceptive versus genuine and sincere. Leveling morality allows you to have a higher understanding of the poorness of principle and implications of being manipulative, such that you are able to develop a sense of genuineness and get to your desired outcome without sacrificing justice. If you find yourself too guarded or dishonest, then  this is the skill for you.
+
+🤗-sympathy
+Sympathy is the measurement of the awareness of others suffering and wanting to alleviate their mourning or misery. Leveling sympathy allows you to feel what others feel and generally understand multiple viewpoints more clearly.
+
+🤞-trust
+Trust measures your predisposition to believe people are fundamentally fair, well-intentioned, and honest. Trust upfront is an integral part of relationship building, with extremely low levels of trust leading to unhealthy cynicism. With this in mind, leveling trust focuses on your ability to be willing to forgive and forget when people falter, or ability to distinguish when to be skeptical versus when to not be. Choose to level trust if you feel yourself worrying too much of others intentions and being wrong many times, or if you feel you are taken advantage of and need to develop a healthy amount of skepticism.
+
+<b>(N-/+) Resilience</b>
+
+This graph is a measurement of your state of being throughout the day. Of all things to level, you should think of resilience as the absence of suffering. Having high resilience levels means you’ll be more mentally stable and able to rebound from anxiety, depression, or anger in situations that bring those things out, which in our human experience are prevalent everywhere. Being low in happiness means you experience frequent negative emotions and react more strongly to negative events than is needed -- in other words you are ‘triggered’ more easily. Levelers should choose to level happiness if they wish to develop the resilience required to brave hardships and pains of life, in order to protect those things affecting the workplace, home life and general relationships with friends, colleagues and family.
+
+🤬-anger
+Anger is the measurement of your tendency to feel triggered by real or supposed grievances. Anger is deep rooted and cannot be properly summarized, however it tends to stem from events or outcomes not going your way. Levelers should choose to level anger if they find themselves too reactive and belligerent, and wish to develop a resilience to triggers.
+
+😰-anxiety
+Anxiety is a measurement of your tendency to feel something unpleasant, threatening, or dangerous. Anxiety is routed in our ‘fight-or-flight’ system of our brains, and can be thought of as the measurement of triggering unpleasant, threatening, or dangerous feelings. Levelers should choose to level anxiety if they wish to develop a sense of calmness and self-assuredness.
+
+😞-depression
+Depression is the range of your tendency to react to life’s suffering, and the amount of time spent thinking about the things you are unhappy about. Clinical depression is a complicated issue that can only be diagnosed by a professional evaluation, so leveling depression focuses on developing your ability to be resilient to life’s ups and downs.
+
+🍩-immoderation
+Immoderation measures your willpower to resist or give in to temptations you are likely to regret later. Leveling immoderation allows you to abstain from short-term pleasures for long-term rewards and outcomes, and develop a sense of self-control to reduce intensity in temptations.
+
+🎬-self-consciousness
+Self-consciousness measures your sensitivity to rejection and ridicule of others. Leveling self-consciousness focuses on building confidence or resilience to embarrassment, ridicul or rejection.
+
+🥳-vulnerability
+Vulnerability is a measurement of your sensitivity to stress and ability to cope. Scoring high in vulnerability means you experience panic, confusion, and helplessness when under pressure. Levelers should choose to level vulnerability if they find themselves overwhelmed by emergency situations, and wish to handle unexpected events calmly and effectively.
+
 </body>
 </html>
