@@ -77,45 +77,6 @@
     </style>
 </head>
 <body>
-    <!-- JUAN DOES NOT WANT RADAR GRAPH ANY MORE
-    <div id="container"></div>
-    <script>
-        anychart.onDocumentReady(function () {
-            // create data set on our data
-            var dataSet = anychart.data.set([
-                ['Fulfillment (E)', "{{ .E }}"],
-                ['Perception (O)', "{{ .O }}"],
-                ['Resilience (N)', "{{ .N }}"],
-                ['Collaboration (A)', "{{ .A }}"],
-                ['Productivity (C)', "{{ .C }}"]
-            ]);
-            // map data for the first series, take x from the zero column and value from the first column of data set
-            var data1 = dataSet.mapAs({ x: 0, value: 1 });
-            // create radar chart
-            var chart = anychart.radar();
-            // set chart title text settings
-            chart.title(
-                '{{RESPONDENT NAME}}'
-            );
-            chart.yScale().minimum(0)
-            chart.yScale().maximum(100)
-            chart.yScale().ticks().interval(5);
-            // set xAxis labels settings
-            chart.xAxis().labels().padding(10);
-            // set chart legend settings
-            chart.legend().align('center').enabled(true);
-            // create first series with mapped data
-            var series1 = chart.line(data1).name('Results');
-            series1.markers().enabled(true).type('circle').size(5);
-            // chart tooltip format
-            chart.tooltip().format('Value: {%Value}');
-            // set container id for the chart
-            chart.container('container');
-            chart.draw();
-        });
-    </script> -->
-
-<!--BEGIN PAGE TEXT-->
 
 <!--Instructions text-->
 <h3 id="instructionHeader">Instructions:</h3>
