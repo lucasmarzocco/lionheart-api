@@ -34,20 +34,20 @@ func init() {
 }
 
 type Personal struct {
-	Name string
-	Email string
-	Phone string
-	MorF  string
-	Gender string
+	Name      string
+	Email     string
+	Phone     string
+	MorF      string
+	Gender    string
 	Ethnicity string
 	Education string
-	Country string
-	USA     bool
-	State	string
-	City    string
-	Live    string
-	Religion string
-	Marital string
+	Country   string
+	USA       bool
+	State     string
+	City      string
+	Live      string
+	Religion  string
+	Marital   string
 }
 
 type User struct {
@@ -113,7 +113,7 @@ type Answer struct {
 }
 
 type Choice struct {
-	Label  string `json:"label"`
+	Label string `json:"label"`
 }
 
 type AnswerField struct {
@@ -286,7 +286,7 @@ func (u *User) TextUser(link string) {
 	msgData := url.Values{}
 	msgData.Set("To", u.PersonalInfo.Phone)
 	msgData.Set("From", os.Getenv("PHONE"))
-	msgData.Set("Body", "Hello " + u.PersonalInfo.Name + "! Your Lionheart test results can be found at: " + link)
+	msgData.Set("Body", "Hello "+u.PersonalInfo.Name+"! Your Lionheart test results can be found at: "+link)
 	msgDataReader := *strings.NewReader(msgData.Encode())
 
 	client := &http.Client{}
@@ -302,7 +302,7 @@ func (u *User) TextUser(link string) {
 
 func (u *User) WriteUserData() {
 
-	err := fb.NewRef("/users/" + u.PersonalInfo.Phone).Set(context.Background(), u)
+	err := fb.NewRef("/users/"+u.PersonalInfo.Phone).Set(context.Background(), u)
 	if err != nil {
 		return
 	}

@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+
 	"github.com/gorilla/mux"
 )
 
@@ -73,7 +74,7 @@ func WebhookHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	u.WriteUserData()
-	u.TextUser(" https://lionheart-api.herokuapp.com/results/"+ u.PersonalInfo.Phone)
+	u.TextUser(" https://lionheart-api.herokuapp.com/results/" + u.PersonalInfo.Phone)
 }
 
 func main() {
