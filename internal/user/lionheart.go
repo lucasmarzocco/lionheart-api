@@ -287,7 +287,6 @@ func (u *User) TextUser(link string) {
 	msgData.Set("To", u.PersonalInfo.Phone)
 	msgData.Set("From", os.Getenv("PHONE"))
 	msgData.Set("Body", "Hello " + u.PersonalInfo.Name + "! Your Lionheart test results can be found at: " + link)
-	//msgData.Set("Body", "Hello " + u.PersonalInfo.Name + "! Results are currently undergoing construction.")
 	msgDataReader := *strings.NewReader(msgData.Encode())
 
 	client := &http.Client{}

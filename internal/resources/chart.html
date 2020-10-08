@@ -1,5 +1,11 @@
+<!DOCTYPE html>
 <html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
+    <title>Lionheart Results</title>
+    <!--bar graphs source-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--Anychart Source-->
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
@@ -10,7 +16,6 @@
     <style type="text/css">
 
         h1 {text-align: center;}
-
         html,
         body,
         #container {
@@ -20,192 +25,348 @@
             padding: 0;
         }
 
+        /*CSS styling for page inline and below -IL*/
+        #instructionHeader{
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 0em;}
+        /* Center-align instructions list but left align text */
+        .centered{
+            text-align: center;
+            margin-bottom: 2em;} /* ensures space above vertical line */
+        #instructions{
+            font-size: 1.3em;
+            display: inline-block; 
+            text-align: left; }
+        hr{margin-bottom: 0em;}
+        /* Button Centering */
+        .w3-button{text-align: center;}
+        #cbutton{
+            /* margin: 0;
+            position: absolute;
+            top: 50%; */
+            /* -ms-transform: translate(50%, -50%); */
+            transform: translate(33.3%, -50%);}
+        
+        /* BIG 5 STYLES */
+        h3{margin-left: -.5em;}
+        .big5{
+            padding-left: 1.5em;
+            padding-right:  1.5em;
+            padding-bottom: 1em;
+            padding-top: 1em;
+            border: 1px solid gainsboro;
+        }
+        h4{margin-bottom: .5em;
+        margin-left: -.5em;
+        }
+/* Only for bar to right of H4: */
+        /* .bar{
+            display: flex;
+            }
+        .bar h4{
+            flex:1;
+        }
+        .bar .bbar{
+            margin-top: 10px;
+            padding-top: .5em;
+            flex: 3;
+            } */
 
-
+        
     </style>
 </head>
 <body>
+    <!-- JUAN DOES NOT WANT RADAR GRAPH ANY MORE
+    <div id="container"></div>
+    <script>
+        anychart.onDocumentReady(function () {
+            // create data set on our data
+            var dataSet = anychart.data.set([
+                ['Fulfillment (E)', "{{ .E }}"],
+                ['Perception (O)', "{{ .O }}"],
+                ['Resilience (N)', "{{ .N }}"],
+                ['Collaboration (A)', "{{ .A }}"],
+                ['Productivity (C)', "{{ .C }}"]
+            ]);
+            // map data for the first series, take x from the zero column and value from the first column of data set
+            var data1 = dataSet.mapAs({ x: 0, value: 1 });
+            // create radar chart
+            var chart = anychart.radar();
+            // set chart title text settings
+            chart.title(
+                '{{RESPONDENT NAME}}'
+            );
+            chart.yScale().minimum(0)
+            chart.yScale().maximum(100)
+            chart.yScale().ticks().interval(5);
+            // set xAxis labels settings
+            chart.xAxis().labels().padding(10);
+            // set chart legend settings
+            chart.legend().align('center').enabled(true);
+            // create first series with mapped data
+            var series1 = chart.line(data1).name('Results');
+            series1.markers().enabled(true).type('circle').size(5);
+            // chart tooltip format
+            chart.tooltip().format('Value: {%Value}');
+            // set container id for the chart
+            chart.container('container');
+            chart.draw();
+        });
+    </script> -->
 
-<div id="container"></div>
+<!--BEGIN PAGE TEXT-->
 
-<script>
-    anychart.onDocumentReady(function () {
-        // create data set on our data
-        var dataSet = anychart.data.set([
-            ['Fulfillment (E)', "{{ .E }}"],
-            ['Perception (O)', "{{ .O }}"],
-            ['Freedom (N)', "{{ .N }}"],
-            ['Collab (A)', "{{ .A }}"],
-            ['Hustle (C)', "{{ .C }}"]
-        ]);
-
-        // map data for the first series, take x from the zero column and value from the first column of data set
-        var data1 = dataSet.mapAs({ x: 0, value: 1 });
-        // create radar chart
-        var chart = anychart.radar();
-
-        // set chart title text settings
-        chart.title(
-            'Test Results'
-        );
-
-        chart.yScale().minimum(0)
-        chart.yScale().maximum(100)
-        chart.yScale().ticks().interval(5);
-
-        // set xAxis labels settings
-        chart.xAxis().labels().padding(10);
-
-        // set chart legend settings
-        chart.legend().align('center').enabled(true);
-
-        // create first series with mapped data
-        var series1 = chart.line(data1).name('Results');
-        series1.markers().enabled(true).type('circle').size(5);
-
-        // chart tooltip format
-        chart.tooltip().format('Value: {%Value}');
-
-        // set container id for the chart
-        chart.container('container');
-        chart.draw();
-    });
-</script>
-
-Instructions: <br><br>
-
-1. Read about each skill and its benefits. <br>
-2. Choose two skills to focus on leveling up. <br>
-3. Once ready to commit, Click <a href="https://discord.com/invite/U5TnQp8">here</a>.<br><br><br>
-
-<b><u>(O+) Perception</u></b><br>
-This graph is a measure of your openness to new activities and ideas, which means you are able to see many ways to achieve a goal. Leveling this skill gives you the ability to solve harder problems by working smarter. <br><br>
-
-Benefits:<br>
-Refine your solutions-awareness.<br>
-Mature your Intellectual curiosity.<br>
-Advance your problem-solving skills.<br><br>
-
-🧶-adventurousness<br>
-Adventurousness is the range of consistency from sticking to routine, to eagerness to experience new things. Leveling adventurousness increases your awareness of when to try new approaches to when to stick to the playbook.<br><br>
-
-🎨-artistic-interest<br>
-Artistic interest is a measurement of how capable you are to become involved in natural flow states. Leveling artistic interest allows you to appreciate, enjoy and seek out new creative solutions or experiences, and get into ‘flow states’ more easily.<br><br>
-
-😨-emotionality<br>
-Emotionality is the range of emotions you can experience due to your perceptions or lack thereof. Leveling emotionality allows for a greater understanding of different perspectives.<br><br>
-
-🦄-imagination<br>
-Imagination is your ability to think deeply on your solutions and come to insights. Leveling imagination increases the number of insights you get from thinking deeply.<br><br>
-
-🤓-intellect<br>
-Intellect is a measurement of your range of dealing with facts versus dealing with ideas. Though there is no better or worse score, lower scores means your strength lies in fact-based approaches, but you may have a hard time exploring new ideas, whereas high scores means you are intrigued by new ideas, but also need to learn to rely on proven results. Leveling Intellect helps you better understand when to go with the proven results, versus when to go with unknown but potentially great solutions.<br><br>
-
-🧢-liberalism<br>
-Liberalism is a measurement of regard to authority. Scoring lower in liberalism means you have a tendency to stick to stability in traditional methods, whereas high liberalism means you are more open to a change in method. Leveling liberalism allows for a greater understanding of hierarchies and when to deviate.<br><br><br>
+<!--Instructions text-->
+<h3 id="instructionHeader">Instructions:</h3>
+<div class="centered">
+<ol id="instructions">
+    <li>Read about each skill and its benefits.</li>
+    <li>Choose two skills to focus on leveling up.</li>
+    <li>Once ready to commit, Click below.</li>
+</ol>
+</div>
+<div id="cbutton"><p><a href="https://discord.com/invite/U5TnQp8" class="w3-button w3-round-xxlarge w3-indigo w3-hover-blue" style="width:33.3%"><strong>Proceed</strong></a></p></div>
 
 
-<b><u>(C+) Productivity</u></b><br>
-This graph is a measure of your organizational skill, perception of responsibility, and strength of willpower to achieve great things. Leveling productivity gives you the ability to be diligent in your work, have more attention to detail, and an overall ability to do your task well and take obligations to others seriously. Levelers should choose to level this if they wish to eliminate their laziness and apathy, or lack of hard-workingness, or if they wish to enjoy higher operating levels and experiences in life in their career or personal lives.<br><br>
 
-Benefits:<br>
-Reduce laziness and apathy.<br>
-Boost your hard-workingness.<br>
-Mature in responsibility and influence.<br><br>
+<hr> <!--Thematic Break-->
 
-💼-achievement-striving<br>
-This graph represents your conviction in carrying out the tasks that lay before you. Leveling achievement striving will improve ambition, patience and perseverance that, when fully habitualized, will allow you to create great work in your career or general endeavors. If you feel you tend to get by with minimal or low effort, then this is the skill for you.<br><br>
-
-⚠-cautiousness<br>
-Cautiousness measures how much you like to think through all the options of a situation before taking action. Abnormally high scores means one can become paralyzed by analysis and inaction. On the other hand, scoring too low means you tend to be too impulsive and may regret more actions over time. Leveling cautiousness develops the ability to be thoughtful in the way of alternatives, and consider consequences of action or inaction in a timely manner.<br><br>
-
-👰-dutifulness<br>
-Dutifulness represents the measurement of your sense of obligation and duty or responsibility. Leveling dutifulness develops a greater sense of obligation and understanding of why you do what you do and why it’s important, even before your self-interest. If you have a sense of being perceived as an unreliable person, or that your word is not respected or taken seriously, or tend to be perceived as someone people cannot count on, then this skill is for you.<br><br>
-
-🧹-orderliness<br>
-This graph is a measurement of your likeness to be organized and structured. Leveling up orderliness improves your ability to plan things effectively, leverage the power of routines and schedules, and get better utility from productivity  systems and methods. If you feel like you have difficulty making plans or get confused or overwhelmed on what your priorities are, then choose this skill.<br><br>
-
-🎮-self-discipline<br>
-Self Discipline is a measurement of your willpower and self-control, or ability to restrain yourself from the distractions that derail you. Levelers who choose to level self-discipline will develop the ability to follow through the most unpleasant tasks, and stay focused, and avoid distractions that lead you astray and to procrastination.<br><br>
-
-🕴-self-efficacy<br>
-This graph represents the confidence in your ability to achieve tasks and accomplish them well. Leveling self-efficacy develops a greater sense of self-belief in your capabilities and potential, innate drive and sense of being in control. Levelers should choose this if they feel their life is spiraling out of control.<br><br><br>
+<div class="big5">
+<h3><u>Perception</u> - <strong>{{.O}}</strong>%</h3>
 
 
-<b><u>(E+) Fulfillment</u></b><br>
-This graph is a measurement of your positive attitude and tendency to be socially or emotionally reserved. Levelers should choose to level this if they struggle with forming deeper connections with friends or colleagues, feel alienated in the workplace or life, and wish to make individuals feel more comfortable, positive and happy. Generally, high fulfillment individuals tend to get promoted into leadership positions and have more opportunities available to them professionally and personally.<br><br>
+<p>This graph is a measure of your openness to new activities and ideas, which means you are able to see many ways to achieve a goal. Leveling this skill gives you the ability to solve harder problems by working smarter.</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+    <li>Refine your solutions-awareness.</li>
+    <li>Mature your Intellectual curiosity.</li>
+    <li>Advance your problem-solving skills.</li>
+</ul>
 
-Benefits:<br>
-Increase depth in relationships.<br>
-Boost chances at new opportunities.<br>
-Radiate an aura of positive ambience.<br><br>
+<h4>🧶-adventurousness</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-amber w3-round-xlarge" style="width:{{ .Subtraits."O4".NormalScore }}%">{{ .Subtraits."O4".NormalScore }}%</div></div>
+<p>Adventurousness is the range of consistency from sticking to routine, to eagerness to experience new things. Leveling adventurousness increases your awareness of when to try new approaches to when to stick to the playbook.</p>
 
-⛹-activity<br>
-Activity measures your tendency to stay busy, move quickly and energetically or prefer life at a slower pace . There is no right or wrong way to be with activity, so leveling activity focuses on showing you methods of organizing your schedule should you be more active, or methods of being effective at a more relaxed pace.<br><br>
+<h4>🎨-artistic-interest</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+    <div class="w3-container w3-amber w3-round-xlarge" style="width:{{ .Subtraits."O2".NormalScore }}%">{{ .Subtraits."O2".NormalScore }}%</div></div>
+<p>Artistic interest is a measurement of how capable you are to become involved in natural flow states. Leveling artistic interest allows you to appreciate, enjoy and seek out new creative solutions or experiences, and get into ‘flow states’ more easily.</p>
 
-💪-assertiveness<br>
-Assertiveness represents the likelihood you’ll lead action or activities in groups, as well as your comfort levels doing so. It is important to note there is no right or wrong way to be, so leveling assertiveness focuses on the benefits of when to lead action or activities, versus when to stand by.<br><br>
+<h4>😨-emotionality</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-amber w3-round-xlarge" style="width:{{ .Subtraits."O3".NormalScore }}%">{{ .Subtraits."O3".NormalScore }}%</div></div>
+<p>Emotionality is the range of emotions you can experience due to your perceptions or lack thereof. Leveling emotionality allows for a greater understanding of different perspectives.</p>
 
-😁-cheerfulness<br>
-Cheerfulness measures the range of your positive feelings, such as general happiness, enthusiasm, optimism and joy. Low scores do not mean there are negative emotions, simply less instances of happy emotions throughout a time period. Leveling cheerfulness focuses on the self-awareness of your levels and how they affect your interpersonal relationships.<br><br>
+<h4>🦄-imagination</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-amber w3-round-xlarge" style="width:{{ .Subtraits."O1".NormalScore }}%">{{ .Subtraits."O1".NormalScore }}%</div></div>
+<p>Imagination is your ability to think deeply on your solutions and come to insights. Leveling imagination increases the number of insights you get from thinking deeply.</p>
 
-🏄-excitement-seeking<br>
-Excitement seeking shows your predisposition to be stimulated by risk-taking activities.  Leveling excitement seeking gives you the ability to take chances when needed without becoming overwhelmed, or how to relax yourself in situations when needed.<br><br>
+<h4>🤓-intellect</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-amber w3-round-xlarge" style="width:{{ .Subtraits."O5".NormalScore }}%">{{ .Subtraits."O5".NormalScore }}%</div></div>
+<p>Intellect is a measurement of your range of dealing with facts versus dealing with ideas. Though there is no better or worse score, lower scores means your strength lies in fact-based approaches, but you may have a hard time exploring new ideas, whereas high scores means you are intrigued by new ideas, but also need to learn to rely on proven results. Leveling Intellect helps you better understand when to go with the proven results, versus when to go with unknown but potentially great solutions.</p>
 
-🐒-friendliness<br>
-Friendliness represents your ability to foster close relationships and feel comfortable around other individuals. Friendliness is at the core of relationship-building which is essential to any successful relationship. Levelers should choose to level friendliness if they wish to develop the interpersonal skills needed to be approachable or develop relationships.<br><br>
+<h4>🧢-liberalism</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-amber w3-round-xlarge" style="width:{{ .Subtraits."O6".NormalScore }}%">{{ .Subtraits."O6".NormalScore }}%</div></div>
+<p>Liberalism is a measurement of regard to authority. Scoring lower in liberalism means you have a tendency to stick to stability in traditional methods, whereas high liberalism means you are more open to a change in method. Leveling liberalism allows for a greater understanding of hierarchies and when to deviate.</p>
+</div>
 
-🐑-gregariousness<br>
-Gregariousness is the measurement of your sociability and interest in relating to groups of individuals. It is important to note there is no superior way of being in relation to individual friendliness, or group gregariousness, so levelers who choose to level gregariousness will develop the ability to see the benefits of being in groups or become more independent when needed.<br><br><br>
+<div class="big5">
+<h3><u>Productivity</u> - <strong>{{.C}}</strong>%</h3>
+<p>This graph is a measure of your organizational skill, perception of responsibility, and strength of willpower to achieve great things. Leveling productivity gives you the ability to be diligent in your work, have more attention to detail, and an overall ability to do your task well and take obligations to others seriously. Levelers should choose to level this if they wish to eliminate their laziness and apathy, or lack of hard-workingness, or if they wish to enjoy higher operating levels and experiences in life in their career or personal lives.</p>
+
+<p><strong>Benefits:</strong></p>
+<ul>
+    <li>Reduce laziness and apathy.</li>
+    <li>Boost your hard-workingness.</li>
+    <li>Mature in responsibility and influence.</li>
+</ul>
+
+<h4>💼-achievement-striving</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-blue w3-round-xlarge" style="width:25%">25%</div></div>
+<p>This graph represents your conviction in carrying out the tasks that lay before you. Leveling achievement striving will improve ambition, patience and perseverance that, when fully habitualized, will allow you to create great work in your career or general endeavors. If you feel you tend to get by with minimal or low effort, then this is the skill for you.</p>
+
+<h4>⚠-cautiousness</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-blue w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Cautiousness measures how much you like to think through all the options of a situation before taking action. Abnormally high scores means one can become paralyzed by analysis and inaction. On the other hand, scoring too low means you tend to be too impulsive and may regret more actions over time. Leveling cautiousness develops the ability to be thoughtful in the way of alternatives, and consider consequences of action or inaction in a timely manner.</p>
+
+<h4>👰-dutifulness</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-blue w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Dutifulness represents the measurement of your sense of obligation and duty or responsibility. Leveling dutifulness develops a greater sense of obligation and understanding of why you do what you do and why it’s important, even before your self-interest. If you have a sense of being perceived as an unreliable person, or that your word is not respected or taken seriously, or tend to be perceived as someone people cannot count on, then this skill is for you.</p>
+
+<h4>🧹-orderliness</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-blue w3-round-xlarge" style="width:25%">25%</div></div>
+<p>This graph is a measurement of your likeness to be organized and structured. Leveling up orderliness improves your ability to plan things effectively, leverage the power of routines and schedules, and get better utility from productivity  systems and methods. If you feel like you have difficulty making plans or get confused or overwhelmed on what your priorities are, then choose this skill.</p>
+
+<h4>🎮-self-discipline</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-blue w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Self Discipline is a measurement of your willpower and self-control, or ability to restrain yourself from the distractions that derail you. Levelers who choose to level self-discipline will develop the ability to follow through the most unpleasant tasks, and stay focused, and avoid distractions that lead you astray and to procrastination.</p>
+
+<h4>🕴-self-efficacy</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-blue w3-round-xlarge" style="width:25%">25%</div></div>
+<p>This graph represents the confidence in your ability to achieve tasks and accomplish them well. Leveling self-efficacy develops a greater sense of self-belief in your capabilities and potential, innate drive and sense of being in control. Levelers should choose this if they feel their life is spiraling out of control.</p>
+</div>
 
 
-<b><u>(A+) Collaboration</u></b><br>
-This graph is a measurement of your internal cooperative skill. Having a high level of collaboration means you’ll be less untrusting or skeptical of people and feel more compassion for others’ causes, putting their interest before your own. Improving your collaboration means you’ll be able to produce or create greater work in general, due to the suspension of ego or superiority complexes in the name of doing great things. Levelers should choose to level collaboration if they find themselves arguing too much, being too competitive and have a general misguided cynical or skeptical view on people’s intentions.<br><br>
+<div class="big5">
+<h3><u>Fulfillment</u> - <strong>{{.E}}</strong>%</h3>
+<p>This graph is a measurement of your positive attitude and tendency to be socially or emotionally reserved. Levelers should choose to level this if they struggle with forming deeper connections with friends or colleagues, feel alienated in the workplace or life, and wish to make individuals feel more comfortable, positive and happy. Generally, high fulfillment individuals tend to get promoted into leadership positions and have more opportunities available to them professionally and personally.</p>
 
-Benefits:<br>
-Mend growing cynicism and excessive untrustingness.<br>
-Become more compassionate.<br>
-Achieve harder goals.<br><br>
+<p><strong>Benefits:</strong></p>
+<ul>
+    <li>Increase depth in relationships.</li>
+    <li>Boost chances at new opportunities.</li>
+    <li>Radiate an aura of positive ambience.</li>
+</ul>
 
-👨-altruism<br>
-Altruism measures your general desire to help others, and the attitude toward helping other. Leveling altruism enhances the feeling of helping others as rewarding instead of self-sacrifice or inconvenient. Choose this skill if you feel yourself too egocentric and would like to develop a quality of awareness and sympathy for the suffering of others.<br><br>
+<h4>⛹-activity</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-light-green w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Activity measures your tendency to stay busy, move quickly and energetically or prefer life at a slower pace . There is no right or wrong way to be with activity, so leveling activity focuses on showing you methods of organizing your schedule should you be more active, or methods of being effective at a more relaxed pace.</p>
 
-🤝-cooperation<br>
-Cooperation shows yours ability to compromise your needs, versus being unnecessarily competitive. Cooperation focuses on leveling your ability to understand when to compromise, versus when to contradict viewpoints. Though it is healthy and encouraged to be contrarian, choose this skill if you find yourself needlessly unfriendly or competitive to the point of ineffectiveness, or when to contradict a popular view and dissent in order to achieve a greater outcome.<br><br>
+<h4>💪-assertiveness</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-light-green w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Assertiveness represents the likelihood you’ll lead action or activities in groups, as well as your comfort levels doing so. It is important to note there is no right or wrong way to be, so leveling assertiveness focuses on the benefits of when to lead action or activities, versus when to stand by.</p>
 
-💍-modesty<br>
-Modesty Is a measure of your reluctance or comfort with drawing attention to yourself. Leveling modesty focuses on either building the ability to hold yourself in high regard without developing excessive interest and admiration in yourself, or being comfortable being the center of attention when needed.<br><br>
+<h4>😁-cheerfulness</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-light-green w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Cheerfulness measures the range of your positive feelings, such as general happiness, enthusiasm, optimism and joy. Low scores do not mean there are negative emotions, simply less instances of happy emotions throughout a time period. Leveling cheerfulness focuses on the self-awareness of your levels and how they affect your interpersonal relationships.</p>
 
-👮🏻-morality<br>
-Morality is the measurement of your predisposition to be manipulative or deceptive versus genuine and sincere. Leveling morality allows you to have a higher understanding of the poorness of principle and implications of being manipulative, such that you are able to develop a sense of genuineness and get to your desired outcome without sacrificing justice. If you find yourself too guarded or dishonest, then  this is the skill for you.<br><br>
+<h4>🏄-excitement-seeking</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-light-green w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Excitement seeking shows your predisposition to be stimulated by risk-taking activities.  Leveling excitement seeking gives you the ability to take chances when needed without becoming overwhelmed, or how to relax yourself in situations when needed.</p>
 
-🤗-sympathy<br>
-Sympathy is the measurement of the awareness of others suffering and wanting to alleviate their mourning or misery. Leveling sympathy allows you to feel what others feel and generally understand multiple viewpoints more clearly.<br><br>
+<h4>🐒-friendliness</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-light-green w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Friendliness represents your ability to foster close relationships and feel comfortable around other individuals. Friendliness is at the core of relationship-building which is essential to any successful relationship. Levelers should choose to level friendliness if they wish to develop the interpersonal skills needed to be approachable or develop relationships.</p>
 
-🤞-trust<br>
-Trust measures your predisposition to believe people are fundamentally fair, well-intentioned, and honest. Trust upfront is an integral part of relationship building, with extremely low levels of trust leading to unhealthy cynicism. With this in mind, leveling trust focuses on your ability to be willing to forgive and forget when people falter, or ability to distinguish when to be skeptical versus when to not be. Choose to level trust if you feel yourself worrying too much of others intentions and being wrong many times, or if you feel you are taken advantage of and need to develop a healthy amount of skepticism.<br><br><br>
+<h4>🐑-gregariousness</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-light-green w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Gregariousness is the measurement of your sociability and interest in relating to groups of individuals. It is important to note there is no superior way of being in relation to individual friendliness, or group gregariousness, so levelers who choose to level gregariousness will develop the ability to see the benefits of being in groups or become more independent when needed.</p>
+</div>
 
 
-<b><u>(N-/+) Resilience</u></b><br>
-This graph is a measurement of your state of being throughout the day. Of all things to level, you should think of resilience as the absence of suffering. Having high resilience levels means you’ll be more mentally stable and able to rebound from anxiety, depression, or anger in situations that bring those things out, which in our human experience are prevalent everywhere. Being low in happiness means you experience frequent negative emotions and react more strongly to negative events than is needed -- in other words you are ‘triggered’ more easily. Levelers should choose to level happiness if they wish to develop the resilience required to brave hardships and pains of life, in order to protect those things affecting the workplace, home life and general relationships with friends, colleagues and family.<br><br>
+<div class="big5">
+<h3><u>Collaboration</u> - <strong>{{.A}}</strong>%</h3>
+<p>This graph is a measurement of your internal cooperative skill. Having a high level of collaboration means you’ll be less untrusting or skeptical of people and feel more compassion for others’ causes, putting their interest before your own. Improving your collaboration means you’ll be able to produce or create greater work in general, due to the suspension of ego or superiority complexes in the name of doing great things. Levelers should choose to level collaboration if they find themselves arguing too much, being too competitive and have a general misguided cynical or skeptical view on people’s intentions.</p>
+<p><strong>Benefits:</strong></p>
+<ul>
+    <li>Mend growing cynicism and excessive untrustingness.</li>
+    <li>Become more compassionate.</li>
+    <li>Achieve harder goals.</li>
+</ul>
 
-🤬-anger<br>
-Anger is the measurement of your tendency to feel triggered by real or supposed grievances. Anger is deep rooted and cannot be properly summarized, however it tends to stem from events or outcomes not going your way. Levelers should choose to level anger if they find themselves too reactive and belligerent, and wish to develop a resilience to triggers.<br><br>
 
-😰-anxiety<br>
-Anxiety is a measurement of your tendency to feel something unpleasant, threatening, or dangerous. Anxiety is routed in our ‘fight-or-flight’ system of our brains, and can be thought of as the measurement of triggering unpleasant, threatening, or dangerous feelings. Levelers should choose to level anxiety if they wish to develop a sense of calmness and self-assuredness.<br><br>
+<h4>👨-altruism</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-red w3-round-xlarge" style="width:25%">25%</div></div>
+Altruism measures your general desire to help others, and the attitude toward helping other. Leveling altruism enhances the feeling of helping others as rewarding instead of self-sacrifice or inconvenient. Choose this skill if you feel yourself too egocentric and would like to develop a quality of awareness and sympathy for the suffering of others.<p></p>
 
-😞-depression<br>
-Depression is the range of your tendency to react to life’s suffering, and the amount of time spent thinking about the things you are unhappy about. Clinical depression is a complicated issue that can only be diagnosed by a professional evaluation, so leveling depression focuses on developing your ability to be resilient to life’s ups and downs.<br><br>
+<h4>🤝-cooperation</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-red w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Cooperation shows yours ability to compromise your needs, versus being unnecessarily competitive. Cooperation focuses on leveling your ability to understand when to compromise, versus when to contradict viewpoints. Though it is healthy and encouraged to be contrarian, choose this skill if you find yourself needlessly unfriendly or competitive to the point of ineffectiveness, or when to contradict a popular view and dissent in order to achieve a greater outcome.</p>
 
-🍩-immoderation<br>
-Immoderation measures your willpower to resist or give in to temptations you are likely to regret later. Leveling immoderation allows you to abstain from short-term pleasures for long-term rewards and outcomes, and develop a sense of self-control to reduce intensity in temptations.<br><br>
+<h4>💍-modesty</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-red w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Modesty Is a measure of your reluctance or comfort with drawing attention to yourself. Leveling modesty focuses on either building the ability to hold yourself in high regard without developing excessive interest and admiration in yourself, or being comfortable being the center of attention when needed.</p>
 
-🎬-self-consciousness<br>
-Self-consciousness measures your sensitivity to rejection and ridicule of others. Leveling self-consciousness focuses on building confidence or resilience to embarrassment, ridicul or rejection.<br><br>
+<h4>👮🏻-morality</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-red w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Morality is the measurement of your predisposition to be manipulative or deceptive versus genuine and sincere. Leveling morality allows you to have a higher understanding of the poorness of principle and implications of being manipulative, such that you are able to develop a sense of genuineness and get to your desired outcome without sacrificing justice. If you find yourself too guarded or dishonest, then  this is the skill for you.</p>
 
-🥳-vulnerability<br>
-Vulnerability is a measurement of your sensitivity to stress and ability to cope. Scoring high in vulnerability means you experience panic, confusion, and helplessness when under pressure. Levelers should choose to level vulnerability if they find themselves overwhelmed by emergency situations, and wish to handle unexpected events calmly and effectively.<br><br><br>
+<h4>🤗-sympathy</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-red w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Sympathy is the measurement of the awareness of others suffering and wanting to alleviate their mourning or misery. Leveling sympathy allows you to feel what others feel and generally understand multiple viewpoints more clearly.</p>
 
+<h4>🤞-trust</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-red w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Trust measures your predisposition to believe people are fundamentally fair, well-intentioned, and honest. Trust upfront is an integral part of relationship building, with extremely low levels of trust leading to unhealthy cynicism. With this in mind, leveling trust focuses on your ability to be willing to forgive and forget when people falter, or ability to distinguish when to be skeptical versus when to not be. Choose to level trust if you feel yourself worrying too much of others intentions and being wrong many times, or if you feel you are taken advantage of and need to develop a healthy amount of skepticism.</p>
+</div>
+
+
+<div class="big5">
+<h3><u>Resilience</u> - <strong>{{.N}}</strong>%</h3>
+<p>This graph is a measurement of your state of being throughout the day. Of all things to level, you should think of resilience as the absence of suffering. Having high resilience levels means you’ll be more mentally stable and able to rebound from anxiety, depression, or anger in situations that bring those things out, which in our human experience are prevalent everywhere. Being low in happiness means you experience frequent negative emotions and react more strongly to negative events than is needed -- in other words you are ‘triggered’ more easily. Levelers should choose to level happiness if they wish to develop the resilience required to brave hardships and pains of life, in order to protect those things affecting the workplace, home life and general relationships with friends, colleagues and family.</p>
+
+<h4>😇-peacefulness</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-purple w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Peacefulness is the measurement of your tendency to not feel triggered by real or supposed grievances. Levelers should choose to level calmness if they find themselves too reactive and belligerent, and wish to develop a resilience to triggers like anger.  </p>
+
+<h4>😰-calmness</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-purple w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Calmness is a measurement of your tendency not to feel something unpleasant, threatening, or dangerous. Anxiety is routed in our ‘fight-or-flight’ system of our brains, and can trigger unpleasant, threatening, or dangerous feelings. Levelers should choose to level calmness if they wish to develop a sense of relaxation and self-assuredness.</p>
+
+<h4>🦁-lionheartedness</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-purple w3-round-xlarge" style="width:25%">25%</div></div>
+<p>If depression is the range of your tendency to react to life’s suffering, and the amount of time spent thinking about the things you are unhappy about, Lionheartedness is your ability to brave suffering. It is important to note that clinical depression is a complicated issue that can only be diagnosed by a professional evaluation, so leveling Lionheartedness focuses on developing your ability to be resilient to life’s ups and downs.</p>
+
+<h4>🍩-moderation</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-purple w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Moderation measures your willpower to resist or give in to temptations you are likely to regret later. Leveling moderation allows you to abstain from short-term pleasures for long-term rewards and outcomes, and develop a sense of self-control to reduce intensity in temptations.</p>
+
+<h4>🎬-self-confidence</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-purple w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Self-confidence measures your ability to not be self-conscious when rejected or ridiculed by others. Leveling self-confidence focuses on building resilience to embarrassment, ridicule or rejection.</p>
+
+<h4>🥳-invulnerability</h4>
+    <!-- Horizontal Bar -->
+    <div class="w3-light-grey w3-round-xlarge">
+        <div class="w3-container w3-purple w3-round-xlarge" style="width:25%">25%</div></div>
+<p>Invulnerability is a measurement of your resilience to stress and ability to cope. Scoring high in invulnerability means you don’t experience panic, confusion, and helplessness when under pressure. Levelers should choose to level invulnerability if they find themselves overwhelmed by emergency situations, and wish to handle unexpected events calmly and effectively.</p>
+</div>
 </body>
 </html>
