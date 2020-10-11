@@ -37,15 +37,13 @@ type Personal struct {
 	Name      string
 	Email     string
 	Phone     string
-	MorF      string
 	Gender    string
 	Ethnicity string
 	Education string
-	Country   string
-	USA       bool
+	CountryFrom   string
+	CountryNow      string
 	State     string
 	City      string
-	Live      string
 	Religion  string
 	Marital   string
 }
@@ -162,30 +160,37 @@ func (u *User) SetUserData(event Event, id string, num int) {
 	switch id {
 	case "ZFgBt9dOpDQC":
 		u.PersonalInfo.Name = answers[num].Text
+
 	case "A3Ff5MitcD0B":
 		u.PersonalInfo.Email = answers[num].Email
+
 	case "pylMBxOaAfNH":
 		u.PersonalInfo.Phone = answers[num].Phone
-	case "ZEkaXVe4eUKF":
-		u.PersonalInfo.MorF = answers[num].Choice.Label
+
 	case "Pu310lQ30CWV":
 		u.PersonalInfo.Gender = answers[num].Choice.Label
+
 	case "V2yfuychA7EO":
 		u.PersonalInfo.Ethnicity = answers[num].Choice.Label
+
 	case "xhPgXgYmwCrJ":
 		u.PersonalInfo.Education = answers[num].Choice.Label
+
 	case "CxSa4lMYjDMS":
-		u.PersonalInfo.Country = answers[num].Choice.Label
-	case "BdChbnM9dTK8":
-		u.PersonalInfo.USA = answers[num].Boolean
+		u.PersonalInfo.CountryFrom = answers[num].Choice.Label
+
+	case "gVHbVFWz2JwR":
+		u.PersonalInfo.CountryNow = answers[num].Choice.Label
+
 	case "nJogp4aNvgO6":
 		u.PersonalInfo.State = answers[num].Choice.Label
+
 	case "waAM8zX0ZhWe":
 		u.PersonalInfo.City = answers[num].Choice.Label
-	case "gVHbVFWz2JwR":
-		u.PersonalInfo.Live = answers[num].Choice.Label
+
 	case "mleCoWbJK8XN":
 		u.PersonalInfo.Religion = answers[num].Choice.Label
+
 	case "vWWAeqhELU2Z":
 		u.PersonalInfo.Marital = answers[num].Choice.Label
 	}
@@ -203,7 +208,7 @@ func (u *User) ProcessUserInfo(test []byte) {
 
 	questions := event.Form.Definition.Fields
 
-	for i, answer := range questions[0:13] {
+	for i, answer := range questions[0:12] {
 		u.SetUserData(event, answer.Id, i)
 	}
 }
@@ -217,7 +222,7 @@ func (u *User) ProcessSubtraits(test []byte) {
 		return
 	}
 
-	for i, ele := range event.Form.Answers[14:] {
+	for i, ele := range event.Form.Answers[12:] {
 
 		entry := data[i+1]
 
