@@ -3,10 +3,11 @@ package main
 import (
 	"html/template"
 	"io/ioutil"
-	"lionheart/internal/user"
 	"log"
 	"net/http"
 	"os"
+
+	"lionheart/internal/user"
 
 	"github.com/gorilla/mux"
 )

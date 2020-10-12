@@ -34,18 +34,23 @@ func init() {
 }
 
 type Personal struct {
-	Name      string
-	Email     string
-	Phone     string
-	Gender    string
-	Ethnicity string
-	Education string
-	CountryFrom   string
-	CountryNow      string
-	State     string
-	City      string
-	Religion  string
-	Marital   string
+	Name        string
+	Email       string
+	Phone       string
+	Gender      string
+	Ethnicity   string
+	Education   string
+	CountryFrom string
+	CountryNow  string
+	State       string
+	City        string
+	Religion    string
+	Marital     string
+}
+
+type Discord struct {
+	ID       string
+	Username string
 }
 
 type User struct {
@@ -53,6 +58,8 @@ type User struct {
 	Subtraits    map[string]*Trait
 	Traits       map[string]*Trait
 	Verified     bool
+	Roles        []string
+	Discord      Discord
 }
 
 type Trait struct {
