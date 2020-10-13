@@ -51,6 +51,7 @@ type Personal struct {
 type Discord struct {
 	ID       string
 	Username string
+	Nickname string
 }
 
 type User struct {
