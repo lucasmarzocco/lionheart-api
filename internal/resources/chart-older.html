@@ -6,48 +6,47 @@
     <!--bar graphs source-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!--Anychart Source-->
-    <!-- <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-radar.min.js"></script>
     <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
     <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="chart.css"> -->
+    <link rel="stylesheet" href="chart.css">
     <style type="text/css">
-    /* Anychart Container Styling */
-        /* h1 {text-align: center;}
+
+        h1 {text-align: center;}
         html,
         body,
         #container {
             width: 100%;
             height: 100%;
             margin: 0;
-            padding: 0;} */
-             /* End anychart container styling */
+            padding: 0;
+        }
 
         /*CSS styling for page inline and below -IL*/
         #instructionHeader{
             font-size: 2.5em;
             text-align: center;
             margin-bottom: 0em;}
-        .centered{/* Center-align instructions list but left align text */
+        /* Center-align instructions list but left align text */
+        .centered{
             text-align: center;
-            margin-bottom:.5em;} /* ensures space above vertical line */
+            margin-bottom: 2em;} /* ensures space above vertical line */
         #instructions{
-            font-size: 1.2em;
+            font-size: 1.3em;
             display: inline-block; 
-            text-align: left;
-            }
-        hr{margin: 0em;}
-
-        /* Button Centering and Positioning */
-        .w3-button{
-            text-align: center;
-            transform: translate(100%, 0%);}
+            text-align: left; }
+        hr{margin-bottom: 0em;}
+        /* Button Centering */
+        .w3-button{text-align: center;}
         #cbutton{
-            position: fixed;
-            bottom: 1em;
-            width:100%;}
+            /* margin: 0;
+            position: absolute;
+            top: 50%; */
+            /* -ms-transform: translate(50%, -50%); */
+            transform: translate(33.3%, -50%);}
         
         /* BIG 5 STYLES */
         h3{margin-left: -.5em;}
@@ -61,8 +60,7 @@
         h4{margin-bottom: .5em;
         margin-left: -.5em;
         }
-
-/* Only for bar to right of H4: --NOT IMPLEMENTED RIGHT NOW */
+/* Only for bar to right of H4: */
         /* .bar{
             display: flex;
             }
@@ -77,9 +75,6 @@
 
         
     </style>
-<!-- Appzi: Capture Insightful Feedback -->
-<script async src="https://w.appzi.io/w.js?token=VfgUx"></script>
-<!-- End Appzi -->
 </head>
 <body>
 
@@ -89,10 +84,12 @@
 <ol id="instructions">
     <li>Read about each skill and its benefits.</li>
     <li>Choose two skills to focus on leveling up.</li>
-    <li>Once ready to commit, tap "Proceed".</li>
+    <li>Once ready to commit, Click below.</li>
 </ol>
 </div>
 <div id="cbutton"><p><a href="https://discord.com/invite/U5TnQp8" class="w3-button w3-round-xxlarge w3-indigo w3-hover-blue" style="width:33.3%"><strong>Proceed</strong></a></p></div>
+
+
 
 <hr> <!--Thematic Break-->
 
