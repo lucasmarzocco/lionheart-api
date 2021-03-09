@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"fmt"
 
 	"lionheart/internal/user"
 
@@ -32,6 +33,23 @@ func FileServer(w http.ResponseWriter, r *http.Request) {
 func UsageHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("server is running"))
 }
+
+func ApprenticeHandler(w http.ResponseWriter, r *http.Request) {
+	data, _ := ioutil.ReadAll(r.Body)
+
+	fmt.Println(string(data))
+
+
+}
+
+func BusinessHandler(w http.ResponseWriter, r *http.Request) {
+	data, _ := ioutil.ReadAll(r.Body)
+
+	fmt.Println(string(data))
+
+
+}
+
 
 func WebhookHandler(w http.ResponseWriter, r *http.Request) {
 	data, _ := ioutil.ReadAll(r.Body)
@@ -87,6 +105,8 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", UsageHandler)
 	r.HandleFunc("/webhook", WebhookHandler)
+	r.HandleFunc("/webhook/apprentice", ApprenticeHandler)
+	r.HandleFunc("/webhook/business", BusinessHandler)
 	r.HandleFunc("/results/{phone}", FileServer)
 	log.Fatal(http.ListenAndServe(":"+port, r))
 }
