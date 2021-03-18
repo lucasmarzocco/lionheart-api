@@ -1,6 +1,8 @@
 package main
 
 import (
+	"bytes"
+	"encoding/json"
 	"html/template"
 	"io/ioutil"
 	"log"
@@ -24,6 +26,10 @@ type Results struct {
 	N         float64
 }
 
+type Response struct {
+	Content  string `json:"content"`
+}
+
 func FileServer(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	phone := vars["phone"]
@@ -35,19 +41,48 @@ func UsageHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func ApprenticeHandler(w http.ResponseWriter, r *http.Request) {
+	discordWebhook := "https://discord.com/api/webhooks/818693274385907773/LeVc2StaL_sOyKYf7bCbSniYWn8dk-bEx5U40v6Er3RPRgPkkA1MrYQ_pK96QwyhltaN"
 	data, _ := ioutil.ReadAll(r.Body)
 
-	fmt.Println(string(data))
+	var event user.Event
+	err := json.Unmarshal(data, &event)
+	if err != nil {
+		return
+	}
 
+	answers := event.Form.Answers
 
+	name := answers[0].Text + " " + answers[1].Text
+	email := answers[2].Email
+	//dob := answers[3].Date
+	located := answers[4].Choice.Label
+	earliest := answers[5].Date
+	//daysAvailable := answers[6].Choices.Labels
+	//hoursAvailable := answers[7].Choice.Label
+	//areas := answers[8].Choices.Labels
+	//industries := answers[9].Choice.Label
+
+	response :=
+		"You have a new Typeform response! \n\n" +
+		"Name: " + name + "\n" +
+		"Email: " + email + "\n" +
+		"Location: " + located + "\n" +
+		"Earliest Start Date: " + earliest + "\n\n" +
+		"Check typeform for more details!"
+
+	resp := Response{
+		response,
+	}
+
+	b, _ := json.Marshal(resp)
+
+	_, err = http.Post(discordWebhook, "application/json", bytes.NewBuffer(b))
 }
 
 func BusinessHandler(w http.ResponseWriter, r *http.Request) {
 	data, _ := ioutil.ReadAll(r.Body)
 
 	fmt.Println(string(data))
-
-
 }
 
 

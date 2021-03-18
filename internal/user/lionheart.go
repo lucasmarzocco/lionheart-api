@@ -114,12 +114,18 @@ type Answer struct {
 	Email   string      `json:"email"`
 	Phone   string      `json:"phone_number"`
 	Number  int         `json:"number"`
+	Date    string      `json:"date"`
 	Choice  Choice      `json:"choice"`
+	Choices Choices     `json:"choices"`
 	Field   AnswerField `json:"field"`
 }
 
 type Choice struct {
 	Label string `json:"label"`
+}
+
+type Choices struct {
+	Labels []string `json:"labels"`
 }
 
 type AnswerField struct {
