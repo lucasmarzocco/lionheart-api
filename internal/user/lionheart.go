@@ -113,10 +113,13 @@ type Answer struct {
 	Text    string      `json:"text"`
 	Email   string      `json:"email"`
 	Phone   string      `json:"phone_number"`
+	Short   string      `json:"short_text"`
+	Long    string      `json:"long_text"`
 	Number  int         `json:"number"`
 	Date    string      `json:"date"`
 	Choice  Choice      `json:"choice"`
 	Choices Choices     `json:"choices"`
+	Website string      `json:"url"`
 	Field   AnswerField `json:"field"`
 }
 

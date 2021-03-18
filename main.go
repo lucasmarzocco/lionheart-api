@@ -5,12 +5,10 @@ import (
 	"encoding/json"
 	"html/template"
 	"io/ioutil"
+	"lionheart/internal/user"
 	"log"
 	"net/http"
 	"os"
-	"fmt"
-
-	"lionheart/internal/user"
 
 	"github.com/gorilla/mux"
 )
@@ -80,9 +78,49 @@ func ApprenticeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func BusinessHandler(w http.ResponseWriter, r *http.Request) {
+	discordWebhook := "https://discord.com/api/webhooks/822043433450864650/zVJ91o_cZSJSI48yDPlW8P859qeS_L6UwdOU4KaTCw99l4Tm2Hhr-hszf7yROns0z0AX"
 	data, _ := ioutil.ReadAll(r.Body)
 
-	fmt.Println(string(data))
+	var event user.Event
+	err := json.Unmarshal(data, &event)
+	if err != nil {
+		return
+	}
+
+	answers := event.Form.Answers
+
+	name := answers[0].Text + " " + answers[1].Text
+	email := answers[2].Email
+	phone := answers[3].Phone
+	website := answers[4].Website
+	role := answers[5].Text
+	description := answers[6].Text
+	industry := answers[7].Choice.Label
+	verticals := answers[8].Choice.Label
+	legal := answers[9].Choice.Label
+	help := answers[10].Text
+
+	response :=
+		"You have a new Typeform response! \n\n" +
+			"Name: " + name + "\n" +
+			"Email: " + email + "\n" +
+			"Phone: " + phone + "\n" +
+			"Website: " + website + "\n" +
+			"Role: " + role + "\n" +
+			"Description: " + description + "\n" +
+			"Industry: " + industry + "\n" +
+			"Verticals: " + verticals+ "\n" +
+			"Legal: " + legal + "\n" +
+			"What I want help with: " + help + "\n\n" +
+			"Check typeform for more details!"
+
+	resp := Response{
+		response,
+	}
+
+	b, _ := json.Marshal(resp)
+
+	_, err = http.Post(discordWebhook, "application/json", bytes.NewBuffer(b))
 }
 
 
