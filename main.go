@@ -168,7 +168,7 @@ func WebhookHandler(w http.ResponseWriter, r *http.Request) {
 
 	response :=
 		"You have a new 120Q response: \n\n" +
-			"Name: " + u.PersonalInfo.Name + "\n" + 
+			"Name: " + u.PersonalInfo.Name + "\n" +
 			"http://35.236.38.223:8888/results/" + u.PersonalInfo.Phone
 
 	resp := Response{
