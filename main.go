@@ -172,7 +172,7 @@ func WebhookHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8000"
+		port = "8888"
 	}
 
 	r := mux.NewRouter()
