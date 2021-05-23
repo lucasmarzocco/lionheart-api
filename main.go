@@ -167,7 +167,7 @@ func WebhookHandler(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
-	u.WriteUserData()
+	//u.WriteUserData()
 	u.TextUser("http://35.236.38.223:8888/results/" + u.PersonalInfo.Phone)
 }
 

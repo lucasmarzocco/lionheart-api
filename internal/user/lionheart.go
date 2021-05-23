@@ -306,7 +306,8 @@ func (u *User) TextUser(link string) {
 	urlStr := "https://api.twilio.com/2010-04-01/Accounts/" + accountSid + "/Messages.json"
 
 	msgData := url.Values{}
-	msgData.Set("To", u.PersonalInfo.Phone)
+	//msgData.Set("To", u.PersonalInfo.Phone)
+	msgData.Set("To", "9254467645")
 	msgData.Set("From", os.Getenv("PHONE"))
 	msgData.Set("Body", "Hello "+u.PersonalInfo.Name+"! Your Lionheart test results can be found at: "+link)
 	msgDataReader := *strings.NewReader(msgData.Encode())
