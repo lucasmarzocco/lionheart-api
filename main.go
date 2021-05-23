@@ -9,6 +9,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"fmt"
 
 	"github.com/gorilla/mux"
 )
@@ -125,6 +126,7 @@ func BusinessHandler(w http.ResponseWriter, r *http.Request) {
 
 
 func WebhookHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Something hit this webhook...")
 	data, _ := ioutil.ReadAll(r.Body)
 
 	u := &user.User{}
@@ -166,7 +168,7 @@ func WebhookHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	u.WriteUserData()
-	u.TextUser(" https://lionheart-api.herokuapp.com/results/" + u.PersonalInfo.Phone)
+	u.TextUser("http://35.236.38.223:8888/results/" + u.PersonalInfo.Phone)
 }
 
 func main() {
