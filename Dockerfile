@@ -16,6 +16,7 @@ RUN go mod download
 
 # Copy the code into the container
 COPY . .
+COPY internal/resources/test.txt .
 
 # Build the application
 RUN go build -o main .
@@ -25,6 +26,7 @@ WORKDIR /dist
 
 # Copy binary from build to main folder
 RUN cp /build/main .
+COPY . .
 
 # Export necessary port
 EXPOSE 8888
