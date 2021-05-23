@@ -3,15 +3,13 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"github.com/gorilla/mux"
 	"html/template"
 	"io/ioutil"
 	"lionheart/internal/user"
 	"log"
 	"net/http"
 	"os"
-	"fmt"
-
-	"github.com/gorilla/mux"
 )
 
 type Results struct {
@@ -126,7 +124,6 @@ func BusinessHandler(w http.ResponseWriter, r *http.Request) {
 
 
 func WebhookHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Something hit this webhook...")
 	data, _ := ioutil.ReadAll(r.Body)
 
 	u := &user.User{}
@@ -167,8 +164,22 @@ func WebhookHandler(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
+    webhook := "https://discord.com/api/webhooks/845954490741948416/NO9_r0MrpNLbg0v7DOgBRKXtV-eyr4XHE-HDpT90H95PVx5mSaDDha_JK2pCh_pjpvwx"
+
+	response :=
+		"You have a new 120Q response: \n\n" +
+			"Name: " + u.PersonalInfo.Name + "\n" + 
+			"http://35.236.38.223:8888/results/" + u.PersonalInfo.Phone
+
+	resp := Response{
+		response,
+	}
+
+	b, _ := json.Marshal(resp)
+	_, err = http.Post(webhook, "application/json", bytes.NewBuffer(b))
+
 	//u.WriteUserData()
-	u.TextUser("http://35.236.38.223:8888/results/" + u.PersonalInfo.Phone)
+	//u.TextUser("http://35.236.38.223:8888/results/" + u.PersonalInfo.Phone)
 }
 
 func main() {
@@ -180,8 +191,6 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", UsageHandler)
 	r.HandleFunc("/webhook", WebhookHandler)
-	r.HandleFunc("/webhook/apprentice", ApprenticeHandler)
-	r.HandleFunc("/webhook/business", BusinessHandler)
 	r.HandleFunc("/results/{phone}", FileServer)
 	log.Fatal(http.ListenAndServe(":"+port, r))
 }
