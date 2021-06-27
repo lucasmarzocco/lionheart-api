@@ -10,6 +10,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"time"
 )
 
 type Results struct {
@@ -25,6 +26,23 @@ type Results struct {
 
 type Response struct {
 	Content  string `json:"content"`
+}
+
+type Health struct {
+	Status int
+	Timestamp time.Time
+}
+
+func health(w http.ResponseWriter, req *http.Request) {
+
+	h := Health {
+		Status: 200,
+		Timestamp: time.Now(),
+	}
+
+	j, _ := json.Marshal(h)
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(j)
 }
 
 func FileServer(w http.ResponseWriter, r *http.Request) {
@@ -192,5 +210,6 @@ func main() {
 	r.HandleFunc("/", UsageHandler)
 	r.HandleFunc("/webhook", WebhookHandler)
 	r.HandleFunc("/results/{phone}", FileServer)
+	r.HandleFunc("/health", health)
 	log.Fatal(http.ListenAndServe(":"+port, r))
 }
