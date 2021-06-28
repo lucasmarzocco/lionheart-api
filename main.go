@@ -4,6 +4,9 @@ import (
 	"bytes"
 	"encoding/json"
 	"github.com/gorilla/mux"
+	"github.com/stripe/stripe-go/v72"
+	"github.com/stripe/stripe-go/v72/account"
+	"github.com/stripe/stripe-go/v72/accountlink"
 	"html/template"
 	"io/ioutil"
 	"lionheart/internal/user"
@@ -33,7 +36,7 @@ type Health struct {
 	Timestamp time.Time
 }
 
-func health(w http.ResponseWriter, req *http.Request) {
+func HealthHandler(w http.ResponseWriter, req *http.Request) {
 
 	h := Health {
 		Status: 200,
@@ -200,6 +203,67 @@ func WebhookHandler(w http.ResponseWriter, r *http.Request) {
 	//u.TextUser("http://35.236.38.223:8888/results/" + u.PersonalInfo.Phone)
 }
 
+func StripeHandler(w http.ResponseWriter, r *http.Request) {
+	stripe.Key = os.Getenv("stripe")
+
+	email := r.URL.Query().Get("email")
+
+	params := &stripe.AccountParams{
+		Capabilities: &stripe.AccountCapabilitiesParams{
+			CardPayments: &stripe.AccountCapabilitiesCardPaymentsParams{
+				Requested: stripe.Bool(true),
+			},
+			Transfers: &stripe.AccountCapabilitiesTransfersParams{
+				Requested: stripe.Bool(true),
+			},
+		},
+		Country: stripe.String("US"),
+		Email: stripe.String(email),
+		Type: stripe.String("custom"),
+	}
+	a, _ := account.New(params)
+
+	params1 := &stripe.AccountLinkParams{
+		Account: stripe.String(a.ID),
+		RefreshURL: stripe.String("http://35.236.38.223/refresh?id=" + a.ID),
+		ReturnURL: stripe.String("http://35.236.38.223/return"),
+		Type: stripe.String("account_onboarding"),
+	}
+
+	al, _ := accountlink.New(params1)
+	j, _ := json.Marshal(al.URL)
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(j)
+}
+
+func RefreshHandler(w http.ResponseWriter, r *http.Request) {
+	id := r.URL.Query().Get("id")
+
+	params1 := &stripe.AccountLinkParams{
+		Account: stripe.String(id),
+		RefreshURL: stripe.String("http://35.236.38.223/refresh?id=" + id),
+		ReturnURL: stripe.String("http://35.236.38.223/return"),
+		Type: stripe.String("account_onboarding"),
+	}
+
+	al, _ := accountlink.New(params1)
+	j, _ := json.Marshal(al.URL)
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(j)
+}
+
+
+func ReturnHandler(w http.ResponseWriter, r *http.Request) {
+	resp := Response{
+		Content: "You have a new response through Stripe onboarding!",
+	}
+
+	b, _ := json.Marshal(resp)
+	http.Post("https://discord.com/api/webhooks/859000927998705704/s96-MOL0haZi2YVce5Zuam70AebeP2BgiQkq2nPL5kGDwffu1JAB1ZdkjiTzD-CWKdtz", "application/json", bytes.NewBuffer(b))
+	http.Redirect(w, r, "https://www.lion.app", http.StatusSeeOther)
+}
+
+
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -210,6 +274,9 @@ func main() {
 	r.HandleFunc("/", UsageHandler)
 	r.HandleFunc("/webhook", WebhookHandler)
 	r.HandleFunc("/results/{phone}", FileServer)
-	r.HandleFunc("/health", health)
+	r.HandleFunc("/health", HealthHandler)
+	r.HandleFunc("/stripe", StripeHandler)
+	r.HandleFunc("/return", ReturnHandler)
+	r.HandleFunc("/refresh", RefreshHandler)
 	log.Fatal(http.ListenAndServe(":"+port, r))
 }
