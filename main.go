@@ -225,8 +225,8 @@ func StripeHandler(w http.ResponseWriter, r *http.Request) {
 
 	params1 := &stripe.AccountLinkParams{
 		Account: stripe.String(a.ID),
-		RefreshURL: stripe.String("http://35.236.38.223/refresh?id=" + a.ID),
-		ReturnURL: stripe.String("http://35.236.38.223/return"),
+		RefreshURL: stripe.String("http://35.236.38.223:8888/refresh?id=" + a.ID),
+		ReturnURL: stripe.String("http://35.236.38.223:8888/return"),
 		Type: stripe.String("account_onboarding"),
 	}
 
@@ -241,8 +241,8 @@ func RefreshHandler(w http.ResponseWriter, r *http.Request) {
 
 	params1 := &stripe.AccountLinkParams{
 		Account: stripe.String(id),
-		RefreshURL: stripe.String("http://35.236.38.223/refresh?id=" + id),
-		ReturnURL: stripe.String("http://35.236.38.223/return"),
+		RefreshURL: stripe.String("http://35.236.38.223:8888/refresh?id=" + id),
+		ReturnURL: stripe.String("http://35.236.38.223:8888/return"),
 		Type: stripe.String("account_onboarding"),
 	}
 
